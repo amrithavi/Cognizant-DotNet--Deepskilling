@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mini2\\OneDrive\\Desktop\\deepskilling\\dsa\\ex2\\ex2.csproj",
+      "projectUniqueName": "C:\\Users\\mini2\\OneDrive\\Desktop\\deepskilling\\Cognizant-DotNet--Deepskilling\\dsa\\ex2\\ex2.csproj",
       "projectName": "ex2",
-      "projectPath": "C:\\Users\\mini2\\OneDrive\\Desktop\\deepskilling\\dsa\\ex2\\ex2.csproj",
+      "projectPath": "C:\\Users\\mini2\\OneDrive\\Desktop\\deepskilling\\Cognizant-DotNet--Deepskilling\\dsa\\ex2\\ex2.csproj",
       "packagesPath": "C:\\Users\\mini2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mini2\\OneDrive\\Desktop\\deepskilling\\dsa\\ex2\\obj\\",
+      "outputPath": "C:\\Users\\mini2\\OneDrive\\Desktop\\deepskilling\\Cognizant-DotNet--Deepskilling\\dsa\\ex2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mini2\\AppData\\Roaming\\NuGet\\NuGet.Config"

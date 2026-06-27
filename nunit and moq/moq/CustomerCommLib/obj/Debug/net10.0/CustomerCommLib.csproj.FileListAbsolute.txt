@@ -1,0 +1,12 @@
+c:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\bin\Debug\net10.0\CustomerCommLib.deps.json
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\bin\Debug\net10.0\CustomerCommLib.dll
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\bin\Debug\net10.0\CustomerCommLib.pdb
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\CustomerCommLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\CustomerCommLib.AssemblyInfoInputs.cache
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\CustomerCommLib.AssemblyInfo.cs
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\CustomerCommLib.csproj.CoreCompileInputs.cache
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\CustomerCommLib.sourcelink.json
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\CustomerCommLib.dll
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\refint\CustomerCommLib.dll
+C:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\CustomerCommLib.pdb
+c:\Users\mini2\OneDrive\Desktop\deepskilling\Cognizant-DotNet--Deepskilling\nunit and moq\moq\CustomerCommLib\obj\Debug\net10.0\ref\CustomerCommLib.dll

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery exercise 6</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #eventBox {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid black;
+            background-color: lightgray;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="eventBox">
+        interact with me
+    </div>
+
+    <input type="text" id="textInput" placeholder="type something">
+
+    <p id="message"></p>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#eventBox").click(function () {
+                $(this).css("background-color", "lightgreen");
+                $("#message").text("div clicked");
+            });
+
+            $("#eventBox").dblclick(function () {
+                $(this).css("background-color", "lightblue");
+                $("#message").text("div double clicked");
+            });
+
+            $("#eventBox").mouseenter(function () {
+                $(this).text("mouse entered");
+            });
+
+            $("#eventBox").mouseleave(function () {
+                $(this).text("mouse left");
+            });
+
+            $("#textInput").keypress(function () {
+                $("#message").text("key pressed");
+            });
+
+        });
+    </script>
+
+</body>
+</html>

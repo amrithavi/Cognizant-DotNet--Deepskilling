@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registration Form</title>
+
+    <style>
+        form {
+            width: 350px;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="confirmation.value='registration submitted successfully'; return false;">
+        
+        <input type="text" placeholder="enter your name" required autofocus>
+
+        <input type="email" placeholder="enter your email" required>
+
+        <input type="date" required>
+
+        <select required>
+            <option value="">select event type</option>
+            <option>music festival</option>
+            <option>sports meet</option>
+            <option>book fair</option>
+        </select>
+
+        <textarea placeholder="enter your message" required></textarea>
+
+        <button type="submit">register</button>
+
+        <br><br>
+
+        <output name="confirmation"></output>
+
+    </form>
+
+</body>
+<script>
+    let eventCount = 5;
+    console.log("page loaded");
+    console.log(eventCount);
+</script>
+</html>

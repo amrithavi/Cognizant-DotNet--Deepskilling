@@ -1,0 +1,90 @@
+/* Universal selector */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dfefff;
+    background-image: url("background.jpg");
+    color: #333333;
+    padding: 20px;
+}
+
+/* Banner styles */
+#mainHeader {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #007BFF, #00C6FF);
+    color: white;
+}
+
+/* Element selector for h2 */
+h2 {
+    margin-top: 20px;
+    color: #0056b3;
+}
+
+/* Event card styles */
+.eventCard {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #cccccc;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* Grouping selector */
+h3,
+p {
+    color: #444444;
+}
+
+/* Typography styles */
+.content {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: justify;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Link styles */
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: green;
+}
+
+/* Style for main CTA button */
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}

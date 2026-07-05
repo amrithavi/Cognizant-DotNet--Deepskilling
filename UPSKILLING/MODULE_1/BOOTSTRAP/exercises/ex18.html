@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 18</title>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <h1>exercise 18.1</h1>
+
+        <button class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+
+            open modal
+
+        </button>
+
+        <div class="modal fade"
+            id="exampleModal"
+            tabindex="-1">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title">
+                            bootstrap modal
+                        </h5>
+
+                        <button class="btn-close"
+                            data-bs-dismiss="modal">
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                        this is a modal popup created using bootstrap.
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+
+                            close
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <h1>exercise 18.2</h1>
+
+        <div class="accordion"
+            id="myAccordion">
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#item1">
+
+                        section 1
+
+                    </button>
+
+                </h2>
+
+                <div id="item1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#myAccordion">
+
+                    <div class="accordion-body">
+
+                        content for section 1
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#item2">
+
+                        section 2
+
+                    </button>
+
+                </h2>
+
+                <div id="item2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#myAccordion">
+
+                    <div class="accordion-body">
+
+                        content for section 2
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#item3">
+
+                        section 3
+
+                    </button>
+
+                </h2>
+
+                <div id="item3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#myAccordion">
+
+                    <div class="accordion-body">
+
+                        content for section 3
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

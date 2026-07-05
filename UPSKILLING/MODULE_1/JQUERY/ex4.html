@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery exercise 4</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <form id="itemForm">
+        <input type="text" id="itemInput" placeholder="enter an item">
+        <button type="submit">add item</button>
+    </form>
+
+    <br>
+
+    <button id="removeBtn">remove all</button>
+
+    <ul id="itemList"></ul>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#itemForm").submit(function (event) {
+                event.preventDefault();
+
+                let item = $("#itemInput").val();
+
+                if (item !== "") {
+                    $("#itemList").append("<li>" + item + "</li>");
+                    $("#itemInput").val("");
+                }
+            });
+
+            $("#removeBtn").click(function () {
+                $("#itemList").empty();
+            });
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Feedback</title>
+
+    <style>
+        form {
+            width: 400px;
+        }
+
+        img {
+            width: 150px;
+        }
+    </style>
+
+    <script>
+        function validatePhone() {
+            let phone = document.getElementById("phone").value;
+
+            if (phone.length !== 10) {
+                alert("enter a valid 10-digit phone number");
+            }
+        }
+
+        function showFee() {
+            let eventType = document.getElementById("eventType").value;
+            let fee = document.getElementById("fee");
+
+            if (eventType === "Music") {
+                fee.textContent = "Event Fee: ₹500";
+            } else if (eventType === "Sports") {
+                fee.textContent = "Event Fee: ₹300";
+            } else if (eventType === "Book Fair") {
+                fee.textContent = "Event Fee: ₹200";
+            }
+        }
+
+        function showConfirmation() {
+            document.getElementById("confirmation").textContent =
+                "feedback submitted successfully";
+        }
+
+        function enlargeImage(img) {
+            img.style.width = "300px";
+        }
+
+        function countCharacters() {
+            let count = document.getElementById("feedback").value.length;
+            document.getElementById("charCount").textContent =
+                "Characters: " + count;
+        }
+    </script>
+</head>
+<body>
+
+    <form>
+
+        <label>Phone Number:</label><br>
+        <input type="text" id="phone" onblur="validatePhone()"><br><br>
+
+        <label>Event Type:</label><br>
+        <select id="eventType" onchange="showFee()">
+            <option value="">Select Event</option>
+            <option value="Music">Music</option>
+            <option value="Sports">Sports</option>
+            <option value="Book Fair">Book Fair</option>
+        </select>
+
+        <p id="fee"></p>
+
+        <img src="event.jpg" alt="Event Image" ondblclick="enlargeImage(this)">
+
+        <br><br>
+
+        <label>Feedback:</label><br>
+        <textarea id="feedback" onkeyup="countCharacters()"></textarea>
+
+        <p id="charCount">Characters: 0</p>
+
+        <button type="button" onclick="showConfirmation()">Submit</button>
+
+        <p id="confirmation"></p>
+
+    </form>
+
+</body>
+</html>

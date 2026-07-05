@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 2vh;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    padding: 2vh;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.eventCard {
+    width: 45%;
+    border: 1px solid black;
+    padding: 2vw;
+}
+
+.eventCard img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .eventCard {
+        width: 100%;
+    }
+
+    .eventCard img {
+        width: 80%;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}

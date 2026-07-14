@@ -1,8 +1,16 @@
+using FirstWebApi.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<CustomExceptionFilter>();
+});
+
+builder.Services.AddScoped<CustomAuthFilter>();
+builder.Services.AddScoped<CustomExceptionFilter>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
 

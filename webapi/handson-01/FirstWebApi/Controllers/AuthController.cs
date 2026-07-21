@@ -43,7 +43,7 @@ public class AuthController : ControllerBase
             issuer:"mySystem",
             audience:"myUsers",
             claims:claims,
-            expires: DateTime.Now.AddMinutes(2),
+            expires: DateTime.Now.AddMinutes(10),
             signingCredentials:credentials);
 
         return new JwtSecurityTokenHandler()

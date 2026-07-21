@@ -7,7 +7,7 @@ namespace FirstWebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-[Authorize(Roles = "Admin,POC")]
+[Authorize]
 public class EmployeeController : ControllerBase
 {
     private List<Employee> employees;

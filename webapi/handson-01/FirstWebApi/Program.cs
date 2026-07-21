@@ -1,4 +1,7 @@
 using FirstWebApi.Filters;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +9,37 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(options =>
 {
-    options.Filters.Add<CustomExceptionFilter>();
+    //options.Filters.Add<CustomExceptionFilter>();
+});
+
+string securityKey = "mysuperdupersecretkey123456789012";
+
+var symmetricSecurityKey =
+    new SymmetricSecurityKey(
+        Encoding.UTF8.GetBytes(securityKey));
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme =
+        JwtBearerDefaults.AuthenticationScheme;
+
+    options.DefaultChallengeScheme =
+        JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters =
+        new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            ValidIssuer = "mySystem",
+            ValidAudience = "myUsers",
+            IssuerSigningKey = symmetricSecurityKey
+        };
 });
 
 builder.Services.AddScoped<CustomAuthFilter>();
@@ -52,6 +85,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

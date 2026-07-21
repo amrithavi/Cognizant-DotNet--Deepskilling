@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using FirstWebApi.Models;
 using FirstWebApi.Filters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FirstWebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-[CustomAuthFilter]
+[Authorize(Roles = "Admin,POC")]
 public class EmployeeController : ControllerBase
 {
     private List<Employee> employees;
@@ -69,7 +70,7 @@ public class EmployeeController : ControllerBase
 
     public ActionResult<List<Employee>> GetStandard()
     {
-      throw new Exception("Testing Exception Filter");
+      return Ok(employees);
     }
 
     [HttpPost]
@@ -81,13 +82,24 @@ public class EmployeeController : ControllerBase
     }
 
     [HttpPut]
-    public IActionResult Put([FromBody] Employee employee)
+    public ActionResult<Employee> Put([FromBody] Employee employee)
     {
+        // Check if id is invalid
+        if (employee.Id <= 0)
+        {
+            return BadRequest("Invalid employee id");
+        }
+
+        // Find employee in the list
         Employee? emp = employees.FirstOrDefault(e => e.Id == employee.Id);
 
+        // Employee not found
         if (emp == null)
-            return NotFound();
+        {
+            return BadRequest("Invalid employee id");
+        }
 
+        // Update employee details
         emp.Name = employee.Name;
         emp.Salary = employee.Salary;
         emp.Permanent = employee.Permanent;
@@ -95,6 +107,7 @@ public class EmployeeController : ControllerBase
         emp.Skills = employee.Skills;
         emp.DateOfBirth = employee.DateOfBirth;
 
+        // Return updated employee
         return Ok(emp);
     }
 }

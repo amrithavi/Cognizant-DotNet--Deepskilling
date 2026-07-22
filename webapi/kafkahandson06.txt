@@ -1,0 +1,35 @@
+=========================================================
+KAFKA HANDS-ON OUTPUT
+=========================================================
+
+C:\kafka_2.12-2.7.0\bin\windows>zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+[2026-07-22 19:48:18] INFO Starting server
+[2026-07-22 19:48:19] INFO binding to port 0.0.0.0:2181
+
+---------------------------------------------------------
+
+C:\kafka_2.12-2.7.0\bin\windows>kafka-server-start.bat ..\..\config\server.properties
+
+[2026-07-22 19:49:24] INFO Kafka version: 2.7.0
+[2026-07-22 19:49:24] INFO [KafkaServer id=0] started
+
+---------------------------------------------------------
+
+C:\kafka_2.12-2.7.0\bin\windows>kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic chat-message
+
+Created topic chat-message.
+
+---------------------------------------------------------
+
+C:\kafka_2.12-2.7.0\bin\windows>kafka-console-producer.bat --broker-list localhost:9092 --topic chat-message
+
+>Hello
+>This is the first message
+
+---------------------------------------------------------
+
+C:\kafka_2.12-2.7.0\bin\windows>kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic chat-message --from-beginning
+
+Hello
+This is the first message

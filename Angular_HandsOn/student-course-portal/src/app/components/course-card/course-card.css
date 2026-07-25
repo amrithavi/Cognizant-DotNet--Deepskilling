@@ -1,0 +1,17 @@
+div{
+    border:1px solid #ddd;
+    margin:15px;
+    padding:15px;
+}
+
+.card--full{
+    background:#f5f5f5;
+}
+
+.card--enrolled{
+    background:#dff0d8;
+}
+
+.expanded{
+    min-height:180px;
+}

@@ -6,7 +6,8 @@
 <p>Enrolled: 3</p>
 <p>GPA: 3.8</p>
 
-<button [disabled]="!isPortalActive" (click)="onEnrollClick()">
+<button
+  [routerLink]="['/enroll']">
   Enroll Now
 </button>
 

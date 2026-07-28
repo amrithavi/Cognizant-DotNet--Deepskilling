@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EnrollmentService } from '../../services/enrollment';
+import { Course } from '../../models/course.model';
 
 @Component({
   selector: 'app-student-profile',
@@ -9,8 +10,20 @@ import { EnrollmentService } from '../../services/enrollment';
   templateUrl: './student-profile.html',
   styleUrl: './student-profile.css'
 })
-export class StudentProfile {
+export class StudentProfile implements OnInit {
 
-  constructor(public enrollmentService: EnrollmentService) {}
+  enrolledCourses: Course[] = [];
+
+  constructor(private enrollmentService: EnrollmentService) {}
+
+  ngOnInit(): void {
+
+    this.enrollmentService.getEnrolledCourses().subscribe(courses => {
+
+      this.enrolledCourses = courses;
+
+    });
+
+  }
 
 }

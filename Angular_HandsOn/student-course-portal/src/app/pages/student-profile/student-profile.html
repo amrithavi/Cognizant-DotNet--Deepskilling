@@ -4,12 +4,16 @@
 
 <ul>
 
-  <li *ngFor="let course of enrollmentService.getEnrolledCourses()">
+  <li *ngFor="let course of enrolledCourses">
+
     {{ course.name }}
+
   </li>
 
 </ul>
 
-<p *ngIf="enrollmentService.getEnrolledCourses().length === 0">
+<p *ngIf="enrolledCourses.length === 0">
+
   No enrolled courses.
+
 </p>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course.service';
 
 @Component({
@@ -7,8 +7,20 @@ import { CourseService } from '../../services/course.service';
   templateUrl: './course-summary-widget.html',
   styleUrl: './course-summary-widget.css'
 })
-export class CourseSummaryWidget {
+export class CourseSummaryWidget implements OnInit {
 
-  constructor(public courseService: CourseService) {}
+  totalCourses = 0;
+
+  constructor(private courseService: CourseService) {}
+
+  ngOnInit(): void {
+
+    this.courseService.getCourses().subscribe(courses => {
+
+      this.totalCourses = courses.length;
+
+    });
+
+  }
 
 }

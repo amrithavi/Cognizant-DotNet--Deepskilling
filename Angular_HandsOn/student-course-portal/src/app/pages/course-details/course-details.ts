@@ -23,9 +23,17 @@ export class CourseDetails implements OnInit {
 
   ngOnInit(): void {
 
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+const id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.course = this.courseService.getCourseById(id);
+this.courseService.getCourseById(id).subscribe({
+
+  next: (course) => {
+
+    this.course = course;
+
+  }
+
+});
 
   }
 

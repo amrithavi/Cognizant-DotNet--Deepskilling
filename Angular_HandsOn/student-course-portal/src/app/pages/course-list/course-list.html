@@ -2,22 +2,30 @@
     Loading courses...
 </p>
 
+<p *ngIf="isLoading">
+    Loading courses...
+</p>
+
+<p *ngIf="errorMessage">
+    {{ errorMessage }}
+</p>
+
 <div *ngIf="!isLoading; else noCourses">
 
     <ng-container *ngFor="let c of courses; trackBy: trackByCourseId">
 
-    <app-course-card
-        [course]="c"
-        (enrollRequested)="onEnroll($event)">
-    </app-course-card>
+        <app-course-card
+            [course]="c"
+            (enrollRequested)="onEnroll($event)">
+        </app-course-card>
 
-    <a [routerLink]="['/courses', c.id]">
-        View Details
-    </a>
+        <a [routerLink]="['/courses', c.id]">
+            View Details
+        </a>
 
-    <br><br>
+        <br><br>
 
-</ng-container>
+    </ng-container>
 
 </div>
 
@@ -30,6 +38,6 @@
 <p *ngIf="selectedCourseId">
 
     Selected Course ID :
-    {{selectedCourseId}}
+    {{ selectedCourseId }}
 
 </p>

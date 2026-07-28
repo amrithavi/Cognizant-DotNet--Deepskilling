@@ -28,10 +28,17 @@ export class Home implements OnInit, OnDestroy {
 
   constructor(private courseService: CourseService) {}
 
-  ngOnInit(): void {
-    this.coursesAvailable = this.courseService.getCourses().length;
-    console.log('HomeComponent initialised - courses loaded');
-  }
+ngOnInit(): void {
+
+  this.courseService.getCourses().subscribe(courses => {
+
+    this.coursesAvailable = courses.length;
+
+  });
+
+  console.log('HomeComponent initialised - courses loaded');
+
+}
 
   ngOnDestroy(): void {
     console.log('HomeComponent destroyed');

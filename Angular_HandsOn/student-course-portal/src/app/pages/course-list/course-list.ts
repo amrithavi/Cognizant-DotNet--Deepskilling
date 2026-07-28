@@ -4,6 +4,9 @@ import { CourseCard } from '../../components/course-card/course-card';
 import { Course } from '../../models/course.model';
 import { CourseService } from '../../services/course.service';
 import { RouterLink } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as CourseActions from '../../store/course/course.actions';
+import * as CourseSelectors from '../../store/course/course.selectors';
 
 @Component({
   selector: 'app-course-list',
@@ -15,24 +18,48 @@ import { RouterLink } from '@angular/router';
 export class CourseList implements OnInit {
 
   isLoading = true;
+  errorMessage = '';
 
   courses: Course[] = [];
 
   selectedCourseId:number|null=null;
 
-  constructor(private courseService: CourseService) {}
+  constructor(
+    private store: Store,
+    private courseService: CourseService
+  ) {}
 
-  ngOnInit():void{
+ngOnInit(): void {
 
-    this.courses = this.courseService.getCourses();
+  this.store.dispatch(
+    CourseActions.loadCourses()
+  );
 
-    setTimeout(()=>{
+  this.store
+    .select(CourseSelectors.selectAllCourses)
+    .subscribe(courses => {
 
-      this.isLoading=false;
+      this.courses = courses;
 
-    },1500);
+    });
 
-  }
+  this.store
+    .select(CourseSelectors.selectLoading)
+    .subscribe(loading => {
+
+      this.isLoading = loading;
+
+    });
+
+  this.store
+    .select(CourseSelectors.selectError)
+    .subscribe(error => {
+
+      this.errorMessage = error ?? '';
+
+    });
+
+}
 
   onEnroll(courseId:number){
 

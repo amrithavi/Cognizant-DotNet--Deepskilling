@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CourseService } from '../../services/course.service';
+import { CourseSummaryWidget } from '../../components/course-summary-widget/course-summary-widget';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import { CourseService } from '../../services/course.service';
   imports: [
   FormsModule,
   CommonModule,
-  RouterLink
+  RouterLink,
+  CourseSummaryWidget
 ],
   templateUrl: './home.html',
   styleUrl: './home.css',

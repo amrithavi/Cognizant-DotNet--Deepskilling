@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +24,10 @@ export class Home implements OnInit, OnDestroy {
 
   coursesAvailable = 0;
 
+  constructor(private courseService: CourseService) {}
+
   ngOnInit(): void {
-    this.coursesAvailable = 12;
+    this.coursesAvailable = this.courseService.getCourses().length;
     console.log('HomeComponent initialised - courses loaded');
   }
 

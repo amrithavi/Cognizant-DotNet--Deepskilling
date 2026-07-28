@@ -4,11 +4,20 @@
 
 <div *ngIf="!isLoading; else noCourses">
 
+    <ng-container *ngFor="let c of courses; trackBy: trackByCourseId">
+
     <app-course-card
-        *ngFor="let c of courses; trackBy:trackByCourseId"
         [course]="c"
         (enrollRequested)="onEnroll($event)">
     </app-course-card>
+
+    <a [routerLink]="['/courses', c.id]">
+        View Details
+    </a>
+
+    <br><br>
+
+</ng-container>
 
 </div>
 

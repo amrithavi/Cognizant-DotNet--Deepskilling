@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CourseCard } from '../../components/course-card/course-card';
 import { Course } from '../../models/course.model';
 import { CourseService } from '../../services/course.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-course-list',
   standalone: true,
-  imports: [CommonModule, CourseCard],
+  imports: [CommonModule, CourseCard, RouterLink],
   templateUrl: './course-list.html',
   styleUrl: './course-list.css',
 })

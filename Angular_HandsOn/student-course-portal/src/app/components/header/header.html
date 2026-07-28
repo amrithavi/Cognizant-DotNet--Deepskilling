@@ -1,8 +1,32 @@
 <p>header works!</p>
 <nav>
-  <h2>Student Course Portal</h2>
 
-  <a href="#">Home</a> |
-  <a href="#">Courses</a> |
-  <a href="#">Profile</a>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Home
+  </a>
+
+  |
+
+  <a routerLink="/courses" routerLinkActive="active">
+    Courses
+  </a>
+
+  |
+
+  <a routerLink="/profile" routerLinkActive="active">
+    Profile
+  </a>
+
+  |
+
+  <a routerLink="/enroll" routerLinkActive="active">
+    Enroll
+  </a>
+
+  |
+
+  <a routerLink="/enroll-reactive" routerLinkActive="active">
+    Reactive Form
+  </a>
+
 </nav>

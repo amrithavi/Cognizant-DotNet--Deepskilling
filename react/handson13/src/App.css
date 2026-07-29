@@ -1,0 +1,9 @@
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.st2, .v1, .mystyle1 {
+  width: 30%;
+  padding: 10px;
+}

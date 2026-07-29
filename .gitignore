@@ -483,3 +483,5 @@ $RECYCLE.BIN/
 
 *.log
 log/
+
+*.bak
